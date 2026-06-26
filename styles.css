@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* Grayscale Design palette: https://grayscale.design/app */
+  :root {
+    --grayscale-50: 248 248 248;
+    --grayscale-100: 234 234 234;
+    --grayscale-200: 216 216 216;
+    --grayscale-300: 186 186 186;
+    --grayscale-400: 170 170 170;
+    --grayscale-500: 155 155 155;
+    --grayscale-600: 102 102 102;
+    --grayscale-700: 86 86 86;
+    --grayscale-800: 71 71 71;
+    --grayscale-900: 45 45 45;
+    --grayscale-1000: 30 30 30;
+    --grayscale-1100: 16 16 16;
+
+    --black: 0 0 0;
+    --white: 255 255 255;
+
+    --dark: var(--black);
+    --light: var(--white);
+
+    --neutral-50: var(--grayscale-50);
+    --neutral-100: var(--grayscale-100);
+    --neutral-200: var(--grayscale-200);
+    --neutral-300: var(--grayscale-300);
+    --neutral-400: var(--grayscale-400);
+    --neutral-500: var(--grayscale-500);
+    --neutral-600: var(--grayscale-600);
+    --neutral-700: var(--grayscale-700);
+    --neutral-800: var(--grayscale-800);
+    --neutral-900: var(--grayscale-900);
+    --neutral-1000: var(--grayscale-1000);
+    --neutral-1100: var(--grayscale-1100);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --dark: var(--white);
+      --light: var(--black);
+
+      --neutral-50: var(--grayscale-1100);
+      --neutral-100: var(--grayscale-1000);
+      --neutral-200: var(--grayscale-900);
+      --neutral-300: var(--grayscale-800);
+      --neutral-400: var(--grayscale-700);
+      --neutral-500: var(--grayscale-600);
+      --neutral-600: var(--grayscale-500);
+      --neutral-700: var(--grayscale-400);
+      --neutral-800: var(--grayscale-300);
+      --neutral-900: var(--grayscale-200);
+      --neutral-1000: var(--grayscale-100);
+      --neutral-1100: var(--grayscale-50);
+    }
+
+    .unset-dark-mode {
+      --grayscale-50: 248 248 248;
+      --grayscale-100: 234 234 234;
+      --grayscale-200: 216 216 216;
+      --grayscale-300: 186 186 186;
+      --grayscale-400: 170 170 170;
+      --grayscale-500: 155 155 155;
+      --grayscale-600: 102 102 102;
+      --grayscale-700: 86 86 86;
+      --grayscale-800: 71 71 71;
+      --grayscale-900: 45 45 45;
+      --grayscale-1000: 30 30 30;
+      --grayscale-1100: 16 16 16;
+
+      --neutral-50: var(--grayscale-50);
+      --neutral-100: var(--grayscale-100);
+      --neutral-200: var(--grayscale-200);
+      --neutral-300: var(--grayscale-300);
+      --neutral-400: var(--grayscale-400);
+      --neutral-500: var(--grayscale-500);
+      --neutral-600: var(--grayscale-600);
+      --neutral-700: var(--grayscale-700);
+      --neutral-800: var(--grayscale-800);
+      --neutral-900: var(--grayscale-900);
+      --neutral-1000: var(--grayscale-1000);
+      --neutral-1100: var(--grayscale-1100);
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-neutral-50 text-dark antialiased;
+  }
+
+  input[type='range'] {
+    @apply accent-neutral-700;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply rounded-xl border border-neutral-300 bg-neutral-100;
+  }
+
+  .input-field {
+    @apply w-full rounded-lg border border-neutral-300 bg-neutral-50 px-4 py-3 text-dark placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-500/40 focus:border-neutral-500 transition-all tabular-nums;
+  }
+
+  .select-field {
+    @apply input-field appearance-none cursor-pointer pr-10;
+  }
+}
